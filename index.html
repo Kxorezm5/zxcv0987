@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HAPPY BRITHDAY</title>
+    <meta charset="UTF-8"/>
+    <meta name="author" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta property="og:title" content="happy brithday "/>
+    <meta name="keywords" content="happy brithday"/>
+    <meta property="og:image" content="https://cdn.prinsh.com/data-1/images/NathanPrinsley-tenor.gif"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content=""/>
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.prinsh.com/data-1/images/NathanPrinsley-tenor.gif"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.prinsh.com/NathanPrinsley-textstyle/nprinsh-stext.css"/>
+    <style>
+        body {
+            background: #222222;
+            font-family: Trebuchet MS;
+            margin-top: 35px;
+        }
+        h1, h2 {
+            margin-top: .3em;
+            margin-bottom: .3em;
+        }
+        h1.nprinsleyy {
+            color: #00FFFF;
+        }
+        h2 {
+            color: #00FFFF;
+        }
+        p.message_prinsley {
+            color: #dbd9d9;
+            margin-top: .25em;
+            margin-bottom: .25em;
+            font-size: 16px;
+            font-weight: unset;
+        }
+        .hubungi_prinsh {
+            color: #00eb00;
+            text-decoration: none;
+        }
+        .hubungi_prinsh:hover {
+            color: red;
+        }
+        .othermes_nprinsh {
+            color: #dbd9d9;
+            font-size: 16px;
+        }
+        marquee.foonathanPrinsley {
+            display: none;
+            position: fixed;
+            width: 100%;
+            bottom: 0px;
+            font-family: Tahoma;
+            height: 20px;
+            color: white;
+            left: 0px;
+            border-top: 2px solid darkred;
+            padding: 5px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <img src="https://cdn.prinsh.com/data-1/images/NathanPrinsley-tenor.gif" style="width: 20%"/>
+        <h1 class="nprinsleyy nprinsley-text-blupelan" style="font-size:32px;">HAPPY BRITHDAY</h1>
+        <h2 id="birthday-name" style="font-size:24px;" class="nprinsley-text-glitchan"></h2>
+        <p class="message_prinsley nathan-prinsley_none"></p>
+        <p style="font-size:14px;" class="nathan-prinsley_none">
+            <a class="hubungi_prinsh" href="mailto:"></a>
+        </p>
+        <p class="othermes_nprinsh nathan-prinsley_none"></p>
+        <audio src="https://cdn.prinsh.com/data-1/mp3/alan-walker_alone-remix.mp3" autoplay="1" loop="1"></audio>
+        <marquee class="foonathanPrinsley">
+            <b style="color: #dbd9d9;font-size:16px;" class="nathan-prinsley_none"></b>
+        </marquee>
+        <script src="https://cdn.prinsh.com/NathanPrinsley-effect/blue-fireworks.js" type="text/javascript"></script>
+        <script>
+            // URL parametridan ismni olish
+            const urlParams = new URLSearchParams(window.location.search);
+            const personName = urlParams.get('tugilgankunegasi');
+
+            // Ismni sahifaga joylashtirish
+            if (personName) {
+                document.getElementById('birthday-name').textContent = personName;
+            }
+        </script>
+        <script>
+            // Cookie uchun ruxsat so'rash funksiyasi
+            function checkCookiesConsent() {
+                // Mahalliy saqlashdan consent holatini tekshirish
+                const consentGiven = localStorage.getItem('cookiesConsent');
+                if (consentGiven === 'true') {
+                    // Ruxsat berilgan bo'lsa, sahifa davom etadi
+                    return;
+                }
+        
+                // Ruxsat olish oynasi
+                const consentDialog = document.createElement('div');
+                consentDialog.style.position = 'fixed';
+                consentDialog.style.bottom = '0';
+                consentDialog.style.left = '0';
+                consentDialog.style.width = '100%';
+                consentDialog.style.backgroundColor = '#000';
+                consentDialog.style.color = '#fff';
+                consentDialog.style.padding = '10px';
+                consentDialog.style.textAlign = 'center';
+                consentDialog.style.zIndex = '1000';
+        
+                consentDialog.innerHTML = `
+                    Ushbu sayt cookie fayllaridan foydalanadi. Qabul qilasizmi?
+                    <button id="acceptCookies" style="margin-left: 10px; padding: 5px 10px; background-color: #00FF00; border: none; color: #000;">Qabul qilish</button>
+                    <button id="declineCookies" style="margin-left: 10px; padding: 5px 10px; background-color: #FF0000; border: none; color: #fff;">Rad etish</button>
+                `;
+        
+                document.body.appendChild(consentDialog);
+        
+                // Tugmalar uchun hodisalarni o'rnatish
+                document.getElementById('acceptCookies').onclick = () => {
+                    localStorage.setItem('cookiesConsent', 'true');
+                    document.body.removeChild(consentDialog);
+                };
+        
+                document.getElementById('declineCookies').onclick = () => {
+                    alert('Siz cookie fayllariga ruxsat bermadingiz. Sahifa to\'liq ishlamasligi mumkin.');
+                    document.body.removeChild(consentDialog);
+                };
+            }
+        
+            // Sahifa yuklanganda funksiyani chaqirish
+            window.onload = checkCookiesConsent;
+        </script>
+        
+    </center>
+</body>
+</html>
